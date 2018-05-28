@@ -9,7 +9,16 @@ def get_domain_name(url):
     except:
         return ''
 
-
+    
+#create project name from the url
+def project_folder(url):
+    try:
+        result = get_sub_domain_name(url).split('.')
+        return result[-2]
+    except:
+        return ''
+    
+        
 # Get sub domain name (name.example.com)
 def get_sub_domain_name(url):
     try:
