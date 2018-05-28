@@ -3,9 +3,14 @@ from queue import Queue
 from spider import Spider
 from domain import *
 from general import *
+import domain
 
-PROJECT_NAME = 'viper-seo'
-HOMEPAGE = 'http://viper-seo.com/'
+
+page_url = str(input('enter Url:'))  # 'http://viper-seo.com/'
+
+
+HOMEPAGE = page_url
+PROJECT_NAME = str(domain.project_folder(HOMEPAGE)).upper()
 DOMAIN_NAME = get_domain_name(HOMEPAGE)
 QUEUE_FILE = PROJECT_NAME + '/queue.txt'
 CRAWLED_FILE = PROJECT_NAME + '/crawled.txt'
