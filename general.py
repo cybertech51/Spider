@@ -6,7 +6,9 @@ def create_project_dir(directory):
     if not os.path.exists(directory):
         print('Creating directory ' + directory)
         os.makedirs(directory)
-
+    elif os.path.exists(directory):
+        print(directory + ' already exist')
+        print('checking for update...')
 
 # Create queue and crawled files (if not created)
 def create_data_files(project_name, base_url):
